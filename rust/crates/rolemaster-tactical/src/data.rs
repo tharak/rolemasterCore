@@ -3,10 +3,17 @@ use std::collections::BTreeMap;
 
 #[derive(Debug, Deserialize)]
 pub struct DataPack {
+    pub weapon_fumbles: Vec<TextRow>,
+    pub spell_failures: Vec<TextRow>,
     pub version: u32,
     pub basic: Vec<AttackRow>,
     pub attacks: BTreeMap<String, Vec<AttackRow>>,
     pub criticals: BTreeMap<String, Vec<CriticalRow>>,
+}
+#[derive(Debug, Deserialize)]
+pub struct TextRow {
+    pub range: [i32; 2],
+    pub cells: Vec<String>,
 }
 #[derive(Debug, Deserialize)]
 pub struct AttackRow {
@@ -58,6 +65,19 @@ pub fn has_equipment(items: &[String], key: &str) -> bool {
         }
 }
 impl DataPack {
+    pub fn failure_text(&self, spell: bool, roll: i32, column: usize) -> Result<&str, String> {
+        let rows = if spell {
+            &self.spell_failures
+        } else {
+            &self.weapon_fumbles
+        };
+        rows.iter()
+            .find(|r| contains(r.range, roll))
+            .and_then(|r| r.cells.get(column))
+            .map(String::as_str)
+            .ok_or("Missing failure table result".into())
+    }
+
     /// Basic Mentalism spell attacks use the helmet columns (A-10.9.11).
     pub fn mentalism_attack(
         &self,

@@ -31,6 +31,8 @@ fn fighter(id: u32, team: u8, q: i32) -> Fighter {
         }],
         weapon: 0,
         reload_left: 0,
+        weapon_recovery: Default::default(),
+        broken_weapons: Default::default(),
         spells: vec![
             Spell::HealingI,
             Spell::HealingIII,

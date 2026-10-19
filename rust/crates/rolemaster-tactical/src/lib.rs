@@ -1,6 +1,7 @@
 //! Incremental, deterministic tactical combat. No renderer, global RNG, AI or storage.
 //! Positions use axial five-foot hexes. All mutations go through commit/step.
 pub mod data;
+mod failures;
 use data::{DataPack, Effect};
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, BTreeSet, VecDeque};
@@ -115,6 +116,10 @@ pub struct Fighter {
     pub weapons: Vec<Weapon>,
     pub weapon: usize,
     pub reload_left: u16,
+    #[serde(default)]
+    pub weapon_recovery: BTreeMap<usize, u32>,
+    #[serde(default)]
+    pub broken_weapons: BTreeSet<usize>,
     pub spells: Vec<Spell>,
     pub equipment: Vec<String>,
     pub conditions: Vec<Condition>,
@@ -144,7 +149,7 @@ impl Fighter {
             .iter()
             .filter(|c| c.starts <= round)
             .map(|c| match c.effect.kind.as_str() {
-                "penalty" => -c.effect.amount,
+                "penalty" | "prone" => -c.effect.amount,
                 "bonus" => c.effect.amount,
                 _ => 0,
             })
@@ -173,6 +178,8 @@ pub enum Action {
     Prepare { spell: Spell },
     Cast { spell: Spell, target: u32 },
     Reload,
+    RecoverWeapon,
+    StandUp,
     ChangeWeapon { index: usize },
     Wait,
 }
@@ -279,6 +286,10 @@ impl BattleState {
                 || f.pp > f.max_pp
                 || f.damage < 0
                 || f.weapon >= f.weapons.len()
+                || f.weapon_recovery
+                    .iter()
+                    .any(|(w, rounds)| *w >= f.weapons.len() || *rounds == 0)
+                || f.broken_weapons.iter().any(|w| *w >= f.weapons.len())
                 || !(1..=20).contains(&f.armor)
                 || f.base_move <= 0
                 || f.level < 1
@@ -408,6 +419,8 @@ impl BattleState {
                     }
                 }
                 Action::Reload => (1, 100),
+                Action::RecoverWeapon => (100, 100),
+                Action::StandUp => (50, 50),
                 Action::ChangeWeapon { .. } => (50, 50),
                 Action::Wait => (0, 0),
             };
@@ -490,6 +503,16 @@ impl BattleState {
                         }
                     }
                 }
+                Action::StandUp => {
+                    if !f.has("prone", self.round) {
+                        return Err("Fighter is not prone".into());
+                    }
+                }
+                Action::RecoverWeapon => {
+                    if !f.weapon_recovery.contains_key(&f.weapon) {
+                        return Err("Current weapon does not need recovery".into());
+                    }
+                }
                 Action::Reload => {
                     if f.weapons[f.weapon].reload == 0 {
                         return Err("Weapon does not require reloading".into());
@@ -508,6 +531,8 @@ impl BattleState {
             let t = self.fighter(p.target).ok_or("Unknown parry target")?;
             if team.is_some_and(|team| f.team != team)
                 || !f.conscious()
+                || f.weapon_recovery.contains_key(&f.weapon)
+                || f.broken_weapons.contains(&f.weapon)
                 || f.has("noParry", self.round)
                 || f.has("stunNoParry", self.round)
                 || f.team == t.team
@@ -777,6 +802,9 @@ impl BattleState {
                     || actor.pos.distance(t.pos) * 5 > w.range
                     || !self.line_of_sight(actor.pos, t.pos)
                     || engaged
+                    || actor.weapon_recovery.contains_key(&actor.weapon)
+                    || actor.broken_weapons.contains(&actor.weapon)
+                    || actor.has("noAttack", self.round)
                     || missile && actor.reload_left > 0
                     || actor.has("mustParry", self.round)
                 {
@@ -803,6 +831,8 @@ impl BattleState {
                     .get(target)
                     .filter(|p| {
                         p.target == a.actor
+                            && !t.weapon_recovery.contains_key(&t.weapon)
+                            && !t.broken_weapons.contains(&t.weapon)
                             && !t.has("noParry", self.round)
                             && !t.has("stunNoParry", self.round)
                     })
@@ -826,20 +856,54 @@ impl BattleState {
                     self.fighters[i].reload_left = w.reload;
                 }
                 if first <= w.fumble {
-                    self.emit(
-                        phase,
-                        Some(a.actor),
-                        Some(*target),
-                        "fumble",
-                        format!("{} fumbles {} (unmodified {})", actor.name, w.name, first),
-                        dice,
-                        0,
-                        None,
-                        None,
-                    );
+                    let roll = self.die(100);
+                    self.weapon_fumble(a, roll, data)?;
                 } else {
                     self.apply_attack(a, *target, &w.table, &w.critical, total, first, dice, data)?;
                 }
+            }
+            Action::StandUp => {
+                self.fighters[i]
+                    .conditions
+                    .retain(|c| c.effect.kind != "prone");
+                self.emit(
+                    phase,
+                    Some(a.actor),
+                    None,
+                    "stand",
+                    format!("{} stands up", actor.name),
+                    vec![],
+                    0,
+                    None,
+                    None,
+                );
+            }
+            Action::RecoverWeapon => {
+                if let Some(left) = self.fighters[i].weapon_recovery.get_mut(&actor.weapon) {
+                    *left = left.saturating_sub(1);
+                    if *left == 0 {
+                        self.fighters[i].weapon_recovery.remove(&actor.weapon);
+                    }
+                }
+                self.emit(
+                    phase,
+                    Some(a.actor),
+                    None,
+                    "recover",
+                    format!(
+                        "{} recovers their weapon; {} rounds left",
+                        actor.name,
+                        self.fighters[i]
+                            .weapon_recovery
+                            .get(&actor.weapon)
+                            .copied()
+                            .unwrap_or(0)
+                    ),
+                    vec![],
+                    0,
+                    None,
+                    None,
+                );
             }
             Action::Reload => {
                 self.fighters[i].reload_left = actor.reload_left.saturating_sub(a.activity as u16);
@@ -945,68 +1009,81 @@ impl BattleState {
             None,
         );
         if let Some(severity) = result.chars().find(|c| ('A'..='E').contains(c)) {
-            let roll = self.die(100);
-            let crit = data.critical(critical, severity, roll, &self.fighters[j].equipment)?;
-            self.fighters[j].disabling |= crit.disabling;
-            for effect in &crit.effects {
-                match effect.kind.as_str() {
-                    "hits" => self.fighters[j].damage += effect.amount,
-                    "dies" => {
-                        if effect.rounds.unwrap_or(0) == 0 {
-                            self.fighters[j].dead = true
-                        } else {
-                            self.fighters[j].death_round = Some(self.round + effect.rounds.unwrap())
-                        }
-                    }
-                    "initiative" => self.fighters[i].initiative_override = Some(self.round + 1),
-                    "recoil" => {}
-                    "bonus" => self.fighters[i].conditions.push(Condition {
-                        effect: effect.clone(),
-                        starts: self.round + 1,
-                        source: Some(a.actor),
-                    }),
-                    "allyBonus" => {
-                        let team = self.fighters[i].team;
-                        for f in &mut self.fighters {
-                            if f.team == team {
-                                let mut e = effect.clone();
-                                e.kind = "bonus".into();
-                                f.conditions.push(Condition {
-                                    effect: e,
-                                    starts: self.round + 1,
-                                    source: Some(a.actor),
-                                });
-                            }
-                        }
-                    }
-                    _ => self.fighters[j].conditions.push(Condition {
-                        effect: effect.clone(),
-                        starts: self.round + 1,
-                        source: Some(a.actor),
-                    }),
-                }
-            }
-            self.emit(
-                Some(a.phase),
-                Some(a.actor),
-                Some(target),
-                "critical",
-                format!(
-                    "{severity} critical {roll}: {} {}{}",
-                    crit.description,
-                    crit.effect,
-                    if crit.review {
-                        " [Conditional ruling requires review]"
-                    } else {
-                        ""
-                    }
-                ),
-                vec![roll],
-                0,
-                None,
-                None,
-            );
+            self.apply_critical(a, target, critical, severity, data)?;
         }
+        Ok(())
+    }
+    fn apply_critical(
+        &mut self,
+        a: &ActionDeclaration,
+        target: u32,
+        critical: &str,
+        severity: char,
+        data: &DataPack,
+    ) -> Result<(), String> {
+        let i = self.index(a.actor)?;
+        let j = self.index(target)?;
+        let roll = self.die(100);
+        let crit = data.critical(critical, severity, roll, &self.fighters[j].equipment)?;
+        self.fighters[j].disabling |= crit.disabling;
+        for effect in &crit.effects {
+            match effect.kind.as_str() {
+                "hits" => self.fighters[j].damage += effect.amount,
+                "dies" => {
+                    if effect.rounds.unwrap_or(0) == 0 {
+                        self.fighters[j].dead = true
+                    } else {
+                        self.fighters[j].death_round = Some(self.round + effect.rounds.unwrap())
+                    }
+                }
+                "initiative" => self.fighters[i].initiative_override = Some(self.round + 1),
+                "recoil" => {}
+                "bonus" => self.fighters[i].conditions.push(Condition {
+                    effect: effect.clone(),
+                    starts: self.round + 1,
+                    source: Some(a.actor),
+                }),
+                "allyBonus" => {
+                    let team = self.fighters[i].team;
+                    for f in &mut self.fighters {
+                        if f.team == team {
+                            let mut e = effect.clone();
+                            e.kind = "bonus".into();
+                            f.conditions.push(Condition {
+                                effect: e,
+                                starts: self.round + 1,
+                                source: Some(a.actor),
+                            });
+                        }
+                    }
+                }
+                _ => self.fighters[j].conditions.push(Condition {
+                    effect: effect.clone(),
+                    starts: self.round + 1,
+                    source: Some(a.actor),
+                }),
+            }
+        }
+        self.emit(
+            Some(a.phase),
+            Some(a.actor),
+            Some(target),
+            "critical",
+            format!(
+                "{severity} critical {roll}: {} {}{}",
+                crit.description,
+                crit.effect,
+                if crit.review {
+                    " [Conditional ruling requires review]"
+                } else {
+                    ""
+                }
+            ),
+            vec![roll],
+            0,
+            None,
+            None,
+        );
         Ok(())
     }
     fn cast(
