@@ -31,7 +31,8 @@ for(const n of [1,2,3,4,5,6]){
   return {keys,variants};
  })}));
 }
-const pack={version:1,source:'Rolemaster Fantasy Role Playing Core Rules; audited fieldbook extraction',attacks,criticals};
+const basic=read("A-10.9.11").rows.filter(r=>r.roll.includes("-")||r.unmodified).map(r=>({range:range(r.roll),unmodified:r.unmodified,values:r.values}));
+const pack={basic,version:1,source:'Rolemaster Fantasy Role Playing Core Rules; audited fieldbook extraction',attacks,criticals};
 fs.writeFileSync(new URL('../data/tactical-v1.json',import.meta.url),JSON.stringify(pack));
 fs.writeFileSync(new URL('../rust/crates/rolemaster-tactical/tests/attack-parity.json',import.meta.url),JSON.stringify(parity));
 console.log(`Wrote ${parity.length} JS attack parity cases and normalized combat data.`);

@@ -376,3 +376,16 @@ fn invalid_save_rejected() {
     b.fighters[1].id = 1;
     assert!(b.validate_state().is_err());
 }
+#[test]
+fn basic_spell_attack_uses_helmet_and_resistance_table() {
+    let data = DataPack::bundled();
+    assert_eq!(data.mentalism_attack(50, 50, &[]).unwrap(), 0);
+    assert_eq!(
+        data.mentalism_attack(50, 50, &["helmet".into()]).unwrap(),
+        10
+    );
+    assert!(data.mentalism_attack(100, 1, &[]).is_err());
+    assert_eq!(DataPack::resistance_target(5, 5), 50);
+    assert_eq!(DataPack::resistance_target(10, 5), 65);
+    assert_eq!(DataPack::resistance_target(16, 15), 51);
+}

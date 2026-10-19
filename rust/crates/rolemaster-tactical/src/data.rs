@@ -4,6 +4,7 @@ use std::collections::BTreeMap;
 #[derive(Debug, Deserialize)]
 pub struct DataPack {
     pub version: u32,
+    pub basic: Vec<AttackRow>,
     pub attacks: BTreeMap<String, Vec<AttackRow>>,
     pub criticals: BTreeMap<String, Vec<CriticalRow>>,
 }
@@ -57,6 +58,50 @@ pub fn has_equipment(items: &[String], key: &str) -> bool {
         }
 }
 impl DataPack {
+    /// Basic Mentalism spell attacks use the helmet columns (A-10.9.11).
+    pub fn mentalism_attack(
+        &self,
+        total: i32,
+        first: i32,
+        equipment: &[String],
+    ) -> Result<i32, String> {
+        let column =
+            if has_equipment(equipment, "metal helmet") || has_equipment(equipment, "helmet") {
+                6
+            } else if has_equipment(equipment, "leather helmet") {
+                7
+            } else {
+                8
+            };
+        let row = self
+            .basic
+            .iter()
+            .find(|r| r.unmodified && contains(r.range, first))
+            .or_else(|| {
+                self.basic
+                    .iter()
+                    .find(|r| !r.unmodified && contains(r.range, total.clamp(3, 95)))
+            })
+            .ok_or("Missing basic spell attack row")?;
+        row.values[column]
+            .parse()
+            .map_err(|_| "Basic spell attack failed".into())
+    }
+    /// T-3.4: piecewise progression, including levels over 15.
+    pub fn resistance_target(attacker: i32, target: i32) -> i32 {
+        fn level(n: i32) -> i32 {
+            if n <= 5 {
+                n * 5
+            } else if n <= 10 {
+                25 + (n - 5) * 3
+            } else if n <= 15 {
+                40 + (n - 10) * 2
+            } else {
+                50 + n - 15
+            }
+        }
+        50 + level(attacker) - level(target)
+    }
     pub fn bundled() -> Self {
         serde_json::from_str(include_str!("../../../../data/tactical-v1.json"))
             .expect("validated combat pack")

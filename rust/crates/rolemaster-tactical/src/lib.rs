@@ -1050,10 +1050,53 @@ impl BattleState {
                 );
             }
             Spell::JoltsI | Spell::MinorPain => {
-                // Same-level threshold is 50; scenario opponents are all level five.
-                let threshold = 50 + 5 * (f.level - t.level);
+                let distance = f.pos.distance(t.pos) * 5;
+                let range_mod = if distance <= 10 {
+                    10
+                } else if distance <= 50 {
+                    0
+                } else {
+                    -10
+                };
+                let wound_mod = if f.damage * 4 > f.max_hits * 3 {
+                    -15
+                } else if f.damage * 2 > f.max_hits {
+                    -10
+                } else if f.damage * 4 > f.max_hits {
+                    -5
+                } else {
+                    0
+                };
+                // Basic spell OB is list rank, not the spell casting maneuver skill bonus.
+                let total = first
+                    + f.level
+                    + range_mod
+                    + wound_mod
+                    + a.phase.modifier()
+                    + f.modifier(self.round);
+                let rr_modifier = match data.mentalism_attack(total, first, &t.equipment) {
+                    Ok(n) => n,
+                    Err(_) => {
+                        self.emit(
+                            Some(a.phase),
+                            Some(a.actor),
+                            Some(target),
+                            "failure",
+                            format!(
+                                "{}: {:?} fails on the Basic Spell Attack table",
+                                f.name, spell
+                            ),
+                            vec![first],
+                            0,
+                            None,
+                            None,
+                        );
+                        return Ok(());
+                    }
+                };
+                let threshold = DataPack::resistance_target(f.level, t.level);
                 let rr = self.open_roll();
-                let total = rr.iter().sum::<i32>() + t.rr;
+                let total = rr.iter().sum::<i32>() + t.rr + rr_modifier;
                 let failed = threshold - total;
                 if failed > 0 {
                     if spell == Spell::JoltsI {
