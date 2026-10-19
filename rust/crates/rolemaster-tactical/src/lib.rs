@@ -3,7 +3,7 @@
 pub mod data;
 use data::{DataPack, Effect};
 use serde::{Deserialize, Serialize};
-use std::collections::{BTreeMap, BTreeSet};
+use std::collections::{BTreeMap, BTreeSet, VecDeque};
 pub const SAVE_VERSION: u32 = 1;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
@@ -164,6 +164,8 @@ impl Fighter {
 }
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum Action {
+    Press { target: u32 },
+    React { target: Option<u32> },
     Move { path: Vec<Hex> },
     Disengage { path: Vec<Hex> },
     Melee { target: u32 },
@@ -212,11 +214,14 @@ pub struct BattleState {
     pub fighters: Vec<Fighter>,
     pub radius: i32,
     pub walls: BTreeSet<Hex>,
+    #[serde(with = "u64_string")]
     pub rng: u64,
     pub plan: RoundPlan,
     pub initiative: BTreeMap<u32, i32>,
     pub queue: Vec<ActionDeclaration>,
     pub cursor: usize,
+    #[serde(default)]
+    pub awaiting_react: Option<u32>,
     pub resolving: bool,
     pub finished: bool,
     pub winner: Option<u8>,
@@ -240,6 +245,7 @@ impl BattleState {
             initiative: BTreeMap::new(),
             queue: vec![],
             cursor: 0,
+            awaiting_react: None,
             resolving: false,
             finished: false,
             winner: None,
@@ -391,6 +397,7 @@ impl BattleState {
                 ),
                 Action::Disengage { .. } => (25, 25),
                 Action::Melee { .. } => (60, 100),
+                Action::Press { .. } | Action::React { .. } => (80, 100),
                 Action::Missile { .. } => (30, 60),
                 Action::Prepare { .. } => (90, 90),
                 Action::Cast { spell, .. } => {
@@ -429,7 +436,9 @@ impl BattleState {
                     }
                     positions.insert(a.actor, p);
                 }
-                Action::Melee { target } | Action::Missile { target } => {
+                Action::Melee { target }
+                | Action::Press { target }
+                | Action::Missile { target } => {
                     let t = self.fighter(*target).ok_or("Unknown target")?;
                     if t.team == f.team || !t.conscious() {
                         return Err("Select an active enemy".into());
@@ -437,12 +446,25 @@ impl BattleState {
                     if f.has("mustParry", self.round) {
                         return Err("Fighter must parry and cannot attack".into());
                     }
+                    if matches!(a.action, Action::Press { .. }) && f.pos.distance(t.pos) > 1 {
+                        return Err("Press requires an adjacent target at declaration".into());
+                    }
                     let w = &f.weapons[f.weapon];
-                    if matches!(a.action, Action::Melee { .. }) && w.reload > 0 {
+                    if matches!(a.action, Action::Melee { .. } | Action::Press { .. })
+                        && w.reload > 0
+                    {
                         return Err("Change to a melee weapon first".into());
                     }
                     if matches!(a.action, Action::Missile { .. }) && w.reload == 0 {
                         return Err("Select a missile weapon first".into());
+                    }
+                }
+                Action::React { target } => {
+                    if target.is_some() {
+                        return Err("React target is chosen during resolution".into());
+                    }
+                    if f.weapons[f.weapon].reload > 0 || f.has("mustParry", self.round) {
+                        return Err("Cannot declare a react melee attack".into());
                     }
                 }
                 Action::Prepare { spell } | Action::Cast { spell, .. } => {
@@ -502,7 +524,7 @@ impl BattleState {
                 return Err("Parry exceeds available OB".into());
             }
             if plan.actions.iter().any(|a| {
-                a.actor == *id && matches!(a.action,Action::Melee{target} if target!=p.target)
+                a.actor == *id && matches!(a.action,Action::Melee{target}|Action::Press{target} if target!=p.target)
             }) {
                 return Err("Parry must target the opponent being attacked".into());
             }
@@ -580,11 +602,70 @@ impl BattleState {
             to,
         });
     }
+    /// Complete a paused React declaration without rolling dice or changing other actions.
+    pub fn choose_react(&mut self, target: Option<u32>) -> Result<(), String> {
+        let actor = self.awaiting_react.ok_or("No react choice is pending")?;
+        if let Some(id) = target {
+            let f = self.fighter(actor).ok_or("Unknown reacting fighter")?;
+            let t = self.fighter(id).ok_or("Unknown react target")?;
+            if t.team == f.team || !t.conscious() || f.pos.distance(t.pos) * 5 > 50 {
+                return Err("React target must be an active enemy within 50 feet".into());
+            }
+            self.queue[self.cursor].action = Action::React { target: Some(id) };
+        } else {
+            self.queue[self.cursor].action = Action::Wait;
+        }
+        self.awaiting_react = None;
+        Ok(())
+    }
+    fn approach(&self, actor: u32, target: Hex, max_steps: usize) -> Vec<Hex> {
+        let start = self.fighter(actor).unwrap().pos;
+        let mut queue = VecDeque::from([(start, vec![])]);
+        let mut seen = BTreeSet::from([start]);
+        while let Some((p, path)) = queue.pop_front() {
+            if p.distance(target) <= 1 {
+                return path;
+            }
+            if path.len() >= max_steps {
+                continue;
+            }
+            for next in p.neighbors() {
+                if self.open(next, actor) && seen.insert(next) {
+                    let mut route = path.clone();
+                    route.push(next);
+                    queue.push_back((next, route));
+                }
+            }
+        }
+        vec![]
+    }
     /// Resolve exactly one declaration (or round cleanup), then return newly recorded events.
     /// Cloning at this boundary makes errors atomic: neither rolls nor partial effects escape.
     pub fn step(&mut self, data: &DataPack) -> Result<Vec<CombatEvent>, String> {
         if !self.resolving || self.finished {
             return Ok(vec![]);
+        }
+        if self.awaiting_react.is_some() {
+            return Ok(vec![]);
+        }
+        if let Some(a) = self.queue.get(self.cursor).cloned() {
+            if matches!(a.action, Action::React { target: None })
+                && self.fighter(a.actor).is_some_and(|f| f.can_act(self.round))
+            {
+                self.awaiting_react = Some(a.actor);
+                self.emit(
+                    Some(a.phase),
+                    Some(a.actor),
+                    None,
+                    "react",
+                    "Choose a react target within 50 feet, or wait".into(),
+                    vec![],
+                    0,
+                    None,
+                    None,
+                );
+                return Ok(vec![self.events.last().unwrap().clone()]);
+            }
         }
         let mut next = self.clone();
         let start = next.events.len();
@@ -602,7 +683,7 @@ impl BattleState {
     }
     fn resolve(&mut self, a: &ActionDeclaration, data: &DataPack) -> Result<(), String> {
         let i = self.index(a.actor)?;
-        let actor = self.fighters[i].clone();
+        let mut actor = self.fighters[i].clone();
         let phase = Some(a.phase);
         if !actor.can_act(self.round) {
             self.fighters[i].preparation = None;
@@ -648,8 +729,43 @@ impl BattleState {
                     Some(pos),
                 );
             }
-            Action::Melee { target } | Action::Missile { target } => {
+            Action::Melee { target }
+            | Action::Press { target }
+            | Action::React {
+                target: Some(target),
+            }
+            | Action::Missile { target } => {
                 let j = self.index(*target)?;
+                let mut move_penalty = 0;
+                let following = matches!(a.action, Action::Press { .. } | Action::React { .. });
+                if following && actor.pos.distance(self.fighters[j].pos) > 1 {
+                    let route = self.approach(
+                        a.actor,
+                        self.fighters[j].pos,
+                        ((actor.base_move * a.activity as i32 / 100).min(50) / 5) as usize,
+                    );
+                    let moved = route.len() as i32 * 5;
+                    if let Some(to) = route.last() {
+                        let from = actor.pos;
+                        actor.pos = *to;
+                        self.fighters[i].pos = *to;
+                        move_penalty = moved * 100 / actor.base_move;
+                        if matches!(a.action, Action::Press { .. }) {
+                            move_penalty /= 2;
+                        }
+                        self.emit(
+                            phase,
+                            Some(a.actor),
+                            None,
+                            "move",
+                            format!("{} follows {} feet", actor.name, moved),
+                            vec![],
+                            0,
+                            Some(from),
+                            Some(*to),
+                        );
+                    }
+                }
                 let t = &self.fighters[j];
                 let w = actor.weapons[actor.weapon].clone();
                 let missile = matches!(a.action, Action::Missile { .. });
@@ -698,7 +814,14 @@ impl BattleState {
                     + actor.modifier(self.round)
                     + a.phase.modifier()
                     - (if missile { 60 } else { 100 } - a.activity as i32)
-                    + if missile { 0 } else { 10 };
+                    - move_penalty
+                    + if missile || matches!(a.action, Action::Press { .. }) {
+                        0
+                    } else if matches!(a.action, Action::React { .. }) {
+                        -10
+                    } else {
+                        10
+                    };
                 if missile {
                     self.fighters[i].reload_left = w.reload;
                 }
@@ -776,7 +899,7 @@ impl BattleState {
                 );
             }
             Action::Cast { spell, target } => self.cast(a, *spell, *target, data)?,
-            Action::Wait => {}
+            Action::React { target: None } | Action::Wait => {}
         }
         Ok(())
     }
@@ -1276,4 +1399,24 @@ pub fn preparation_modifier(diff: i32, rounds: u32, instant: bool) -> i32 {
             _ => 7,
         }
     }]
+}
+
+// JSON numbers cannot round-trip u64 through JavaScript. Keep RNG exact at the host boundary.
+mod u64_string {
+    use serde::{Deserialize, Deserializer, Serializer};
+    pub fn serialize<S: Serializer>(n: &u64, s: S) -> Result<S::Ok, S::Error> {
+        s.serialize_str(&n.to_string())
+    }
+    pub fn deserialize<'de, D: Deserializer<'de>>(d: D) -> Result<u64, D::Error> {
+        #[derive(Deserialize)]
+        #[serde(untagged)]
+        enum Value {
+            Text(String),
+            Number(u64),
+        }
+        match Value::deserialize(d)? {
+            Value::Text(s) => s.parse().map_err(serde::de::Error::custom),
+            Value::Number(n) => Ok(n),
+        }
+    }
 }

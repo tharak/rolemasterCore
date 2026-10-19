@@ -389,3 +389,51 @@ fn basic_spell_attack_uses_helmet_and_resistance_table() {
     assert_eq!(DataPack::resistance_target(10, 5), 65);
     assert_eq!(DataPack::resistance_target(16, 15), 51);
 }
+#[test]
+fn rng_json_is_exact_for_javascript_hosts() {
+    let mut b = battle();
+    b.rng = u64::MAX;
+    let value = serde_json::to_value(&b).unwrap();
+    assert_eq!(value["rng"], u64::MAX.to_string());
+    let restored: BattleState = serde_json::from_value(value).unwrap();
+    assert_eq!(restored.rng, u64::MAX);
+}
+#[test]
+fn react_pauses_without_rerolling_and_resumes_after_save() {
+    let mut b = battle();
+    b.commit(plan(vec![action(
+        1,
+        Phase::Normal,
+        100,
+        Action::React { target: None },
+    )]))
+    .unwrap();
+    let rng = b.rng;
+    b.step(&DataPack::bundled()).unwrap();
+    assert_eq!(b.awaiting_react, Some(1));
+    assert_eq!(b.rng, rng);
+    b.step(&DataPack::bundled()).unwrap();
+    assert_eq!(b.rng, rng);
+    let mut b: BattleState = serde_json::from_str(&serde_json::to_string(&b).unwrap()).unwrap();
+    b.choose_react(Some(2)).unwrap();
+    b.step(&DataPack::bundled()).unwrap();
+    assert!(b.awaiting_react.is_none());
+    assert_eq!(b.cursor, 1);
+}
+#[test]
+fn press_requires_adjacent_declaration_and_follows_departing_target() {
+    let mut b = battle();
+    let p = plan(vec![action(
+        1,
+        Phase::Normal,
+        100,
+        Action::Press { target: 2 },
+    )]);
+    b.fighters[1].pos = Hex { q: 3, r: 0 };
+    assert!(b.validate_plan(&p, None).is_err());
+    b.fighters[1].pos = Hex { q: 1, r: 0 };
+    b.commit(p).unwrap();
+    b.fighters[1].pos = Hex { q: 3, r: 0 };
+    b.step(&DataPack::bundled()).unwrap();
+    assert_eq!(b.fighters[0].pos.distance(b.fighters[1].pos), 1);
+}
