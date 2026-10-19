@@ -43,3 +43,18 @@ Tests include six complete combat-output fingerprints captured before extraction
 The fieldbook vendors a pinned revision under `vendor/rolemaster-core` using Git subtree. Its `src` compatibility modules re-export this implementation; Ludus and guild adapters stay in the fieldbook. This keeps static hosting self-contained and does not require a host to authenticate to this private repository. Make engine changes here, verify them, commit and push, then pull the subtree into each consumer. Do not maintain divergent engine implementations in application folders.
 
 The extraction preserves the original implementation and rule data. It does not change ownership or licensing of the original source material or grant a new redistribution license.
+
+## Incremental Rust tactical engine
+
+`rust/crates/rolemaster-tactical` provides serializable `BattleState`, `RoundPlan`,
+`ActionDeclaration`, and `CombatEvent` types. Validate declarations, call `commit`,
+then `step` once per animation/save boundary. Failed steps are atomic. The engine
+owns positions, conditions, initiative, power points and deterministic RNG; hosts
+own scenario profiles, planning/AI, presentation and save storage.
+
+`node scripts/build-tactical-data.mjs` regenerates `data/tactical-v1.json` from
+our audited table fixtures and JS critical normalizer. It also generates 945
+cross-language attack lookup cases. The pack contains no PDFs. Existing JS APIs
+remain unchanged. This tactical API is experimental until the complete source
+rule audit and browser integration checks have finished; do not treat it as a
+complete Rolemaster rules implementation.
