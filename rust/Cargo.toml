@@ -1,0 +1,3 @@
+[workspace]
+members = ["crates/game-rules", "crates/rolemaster-rules"]
+resolver = "2"

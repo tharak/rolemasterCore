@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {barterValue} from '../src/economics-rules.js';
+test('barter compares source prices without assuming acceptance',()=>{const result=barterValue([{priceTin:500,quantity:3}],[{priceTin:300,quantity:4}]);assert.equal(result.differenceTin,300);assert.match(result.note,/decide/);assert.throws(()=>barterValue([{priceTin:5,quantity:-1}],[]));});

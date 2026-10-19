@@ -1,0 +1,2512 @@
+[
+  {
+    "party": [
+      {
+        "id": "p0",
+        "sourceKind": "master",
+        "name": "Fighter (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Fighter",
+        "level": 1,
+        "size": "M",
+        "armor_type": 8,
+        "db": 30,
+        "hits": 56,
+        "ppMax": 0,
+        "realm": "Channeling",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "short-bow",
+            "name": "Short Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   8(30s)    56   0   50me   45ms    -15    -30    20      2     5      0     5(1)     10     -30    32   10(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "short-sword",
+            "2": "short-bow"
+          }
+        },
+        "armorName": "Reinforced Full-Length Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0
+      },
+      {
+        "id": "p1",
+        "sourceKind": "master",
+        "name": "Thief (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Thief",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 15,
+        "hits": 35,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "light-crossbow",
+            "name": "Light Crossbow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 35,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 35,
+            "kind": "ms"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1    6(15)    35   0   35ms   20me     0    25    30     12    20      0     30(2)    35     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 15; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "light-crossbow",
+            "2": "short-sword"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": false
+        },
+        "pp": 0
+      }
+    ],
+    "enemies": [
+      {
+        "id": "e0",
+        "sourceKind": "master",
+        "name": "Fighter (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Fighter",
+        "level": 1,
+        "size": "M",
+        "armor_type": 8,
+        "db": 30,
+        "hits": 56,
+        "ppMax": 0,
+        "realm": "Channeling",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "quarterstaff",
+            "name": "Quarterstaff",
+            "kind": "me",
+            "category": "Weapon • 2-Handed",
+            "attackTable": "A-10.9.3",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "composite-bow",
+            "name": "Composite Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   8(30s)    56   0   50me   45ms    -15    -30    20      2     5      0     5(1)     10     -30    32   10(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "quarterstaff",
+            "2": "composite-bow"
+          }
+        },
+        "armorName": "Reinforced Full-Length Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0
+      },
+      {
+        "id": "e1",
+        "sourceKind": "master",
+        "name": "Thief (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Thief",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 15,
+        "hits": 35,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "long-bow",
+            "name": "Long Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 35,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "quarterstaff",
+            "name": "Quarterstaff",
+            "kind": "me",
+            "category": "Weapon • 2-Handed",
+            "attackTable": "A-10.9.3",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 35,
+            "kind": "ms"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1    6(15)    35   0   35ms   20me     0    25    30     12    20      0     30(2)    35     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 15; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "long-bow",
+            "2": "quarterstaff"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": false
+        },
+        "pp": 0
+      }
+    ],
+    "options": {
+      "recordPlayback": true,
+      "persistentConsequences": true,
+      "support": null,
+      "geometry": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      },
+      "elements": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      }
+    },
+    "seed": "extraction-0",
+    "expected": "c12ed299ae597208e08b10b541caf7167a255316a4bf189bbb32a04c8058cf3c"
+  },
+  {
+    "party": [
+      {
+        "id": "p0",
+        "sourceKind": "master",
+        "name": "Thief (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Thief",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 15,
+        "hits": 35,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "long-bow",
+            "name": "Long Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 35,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "broadsword",
+            "name": "Broadsword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 35,
+            "kind": "ms"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1    6(15)    35   0   35ms   20me     0    25    30     12    20      0     30(2)    35     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 15; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "long-bow",
+            "2": "broadsword"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": false
+        },
+        "pp": 0,
+        "supportEffects": [
+          {
+            "until": 100,
+            "range": 100,
+            "group": "prayer",
+            "db": 10,
+            "rr": 10
+          }
+        ]
+      },
+      {
+        "id": "p1",
+        "sourceKind": "master",
+        "name": "Rogue (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Rogue",
+        "level": 1,
+        "size": "M",
+        "armor_type": 7,
+        "db": 30,
+        "hits": 41,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "war-hammer",
+            "name": "War Hammer",
+            "kind": "me",
+            "category": "Weapon • 1-H Concussion",
+            "attackTable": "A-10.9.1",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "long-bow",
+            "name": "Long Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   7(30s)    41   0   50me   45ms    -10    15    35      7    15      0     25(2)    25     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "war-hammer",
+            "2": "long-bow"
+          }
+        },
+        "armorName": "Reinforced Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0
+      }
+    ],
+    "enemies": [
+      {
+        "id": "e0",
+        "sourceKind": "master",
+        "name": "Thief (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Thief",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 15,
+        "hits": 35,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "sling",
+            "name": "Sling",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 35,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "mace",
+            "name": "Mace",
+            "kind": "me",
+            "category": "Weapon • 1-H Concussion",
+            "attackTable": "A-10.9.1",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 35,
+            "kind": "ms"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1    6(15)    35   0   35ms   20me     0    25    30     12    20      0     30(2)    35     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 15; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "sling",
+            "2": "mace"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": false
+        },
+        "pp": 0
+      },
+      {
+        "id": "e1",
+        "sourceKind": "master",
+        "name": "Rogue (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Rogue",
+        "level": 1,
+        "size": "M",
+        "armor_type": 7,
+        "db": 30,
+        "hits": 41,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "sling",
+            "name": "Sling",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   7(30s)    41   0   50me   45ms    -10    15    35      7    15      0     25(2)    25     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "short-sword",
+            "2": "sling"
+          }
+        },
+        "armorName": "Reinforced Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0
+      }
+    ],
+    "options": {
+      "recordPlayback": true,
+      "persistentConsequences": true,
+      "support": {
+        "clock": 0,
+        "auras": []
+      },
+      "geometry": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      },
+      "elements": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      }
+    },
+    "seed": "extraction-1",
+    "expected": "6824d0516eb82820d799955d2164c8224019c956a7afd60d987f1ecb663e4945"
+  },
+  {
+    "party": [
+      {
+        "id": "p0",
+        "sourceKind": "master",
+        "name": "Rogue (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Rogue",
+        "level": 1,
+        "size": "M",
+        "armor_type": 7,
+        "db": 30,
+        "hits": 41,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "short-bow",
+            "name": "Short Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   7(30s)    41   0   50me   45ms    -10    15    35      7    15      0     25(2)    25     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "short-sword",
+            "2": "short-bow"
+          }
+        },
+        "armorName": "Reinforced Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0
+      },
+      {
+        "id": "p1",
+        "sourceKind": "master",
+        "name": "Cleric (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Cleric",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 30,
+        "hits": 30,
+        "ppMax": 16,
+        "realm": "Channeling",
+        "spellRanks": 13,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "war-hammer",
+            "name": "War Hammer",
+            "kind": "me",
+            "category": "Weapon • 1-H Concussion",
+            "attackTable": "A-10.9.1",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 20,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": true,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   6(30s*)   30  16   20me   20me     0    -25    15     16    15     13    -25(0)    10     15     35   25(3)"
+        },
+        "special": "T-5.8 · 16 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "war-hammer",
+            "2": "short-sword"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 16
+      }
+    ],
+    "enemies": [
+      {
+        "id": "e0",
+        "sourceKind": "master",
+        "name": "Rogue (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Rogue",
+        "level": 1,
+        "size": "M",
+        "armor_type": 7,
+        "db": 30,
+        "hits": 41,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "quarterstaff",
+            "name": "Quarterstaff",
+            "kind": "me",
+            "category": "Weapon • 2-Handed",
+            "attackTable": "A-10.9.3",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "composite-bow",
+            "name": "Composite Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   7(30s)    41   0   50me   45ms    -10    15    35      7    15      0     25(2)    25     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "quarterstaff",
+            "2": "composite-bow"
+          }
+        },
+        "armorName": "Reinforced Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0
+      },
+      {
+        "id": "e1",
+        "sourceKind": "master",
+        "name": "Cleric (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Cleric",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 30,
+        "hits": 30,
+        "ppMax": 16,
+        "realm": "Channeling",
+        "spellRanks": 13,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "quarterstaff",
+            "name": "Quarterstaff",
+            "kind": "me",
+            "category": "Weapon • 2-Handed",
+            "attackTable": "A-10.9.3",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 20,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": true,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   6(30s*)   30  16   20me   20me     0    -25    15     16    15     13    -25(0)    10     15     35   25(3)"
+        },
+        "special": "T-5.8 · 16 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "short-sword",
+            "2": "quarterstaff"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 16
+      }
+    ],
+    "options": {
+      "recordPlayback": true,
+      "persistentConsequences": true,
+      "support": null,
+      "geometry": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      },
+      "elements": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      }
+    },
+    "seed": "extraction-2",
+    "expected": "0c4a206a11257a4a7f5b67b023f4b6e78b9386cdc5380f843851ce40574c45a4"
+  },
+  {
+    "party": [
+      {
+        "id": "p0",
+        "sourceKind": "master",
+        "name": "Fighter (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Fighter",
+        "level": 1,
+        "size": "M",
+        "armor_type": 8,
+        "db": 30,
+        "hits": 56,
+        "ppMax": 0,
+        "realm": "Channeling",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "short-bow",
+            "name": "Short Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   8(30s)    56   0   50me   45ms    -15    -30    20      2     5      0     5(1)     10     -30    32   10(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "short-sword",
+            "2": "short-bow"
+          }
+        },
+        "armorName": "Reinforced Full-Length Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0,
+        "supportEffects": [
+          {
+            "until": 100,
+            "range": 100,
+            "group": "prayer",
+            "db": 10,
+            "rr": 10
+          }
+        ]
+      },
+      {
+        "id": "p1",
+        "sourceKind": "master",
+        "name": "Thief (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Thief",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 15,
+        "hits": 35,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "light-crossbow",
+            "name": "Light Crossbow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 35,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 35,
+            "kind": "ms"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1    6(15)    35   0   35ms   20me     0    25    30     12    20      0     30(2)    35     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 15; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "light-crossbow",
+            "2": "short-sword"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": false
+        },
+        "pp": 0
+      }
+    ],
+    "enemies": [
+      {
+        "id": "e0",
+        "sourceKind": "master",
+        "name": "Fighter (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Fighter",
+        "level": 1,
+        "size": "M",
+        "armor_type": 8,
+        "db": 30,
+        "hits": 56,
+        "ppMax": 0,
+        "realm": "Channeling",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "quarterstaff",
+            "name": "Quarterstaff",
+            "kind": "me",
+            "category": "Weapon • 2-Handed",
+            "attackTable": "A-10.9.3",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "composite-bow",
+            "name": "Composite Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   8(30s)    56   0   50me   45ms    -15    -30    20      2     5      0     5(1)     10     -30    32   10(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "quarterstaff",
+            "2": "composite-bow"
+          }
+        },
+        "armorName": "Reinforced Full-Length Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0
+      },
+      {
+        "id": "e1",
+        "sourceKind": "master",
+        "name": "Thief (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Thief",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 15,
+        "hits": 35,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "long-bow",
+            "name": "Long Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 35,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "quarterstaff",
+            "name": "Quarterstaff",
+            "kind": "me",
+            "category": "Weapon • 2-Handed",
+            "attackTable": "A-10.9.3",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 35,
+            "kind": "ms"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1    6(15)    35   0   35ms   20me     0    25    30     12    20      0     30(2)    35     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 15; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "long-bow",
+            "2": "quarterstaff"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": false
+        },
+        "pp": 0
+      }
+    ],
+    "options": {
+      "recordPlayback": true,
+      "persistentConsequences": true,
+      "support": {
+        "clock": 0,
+        "auras": []
+      },
+      "geometry": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      },
+      "elements": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      }
+    },
+    "seed": "extraction-3",
+    "expected": "2bbaad453b074da6764e6864eb5b2eb1b11f7a73dcc49e7fb0fce0558e0292ec"
+  },
+  {
+    "party": [
+      {
+        "id": "p0",
+        "sourceKind": "master",
+        "name": "Thief (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Thief",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 15,
+        "hits": 35,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "long-bow",
+            "name": "Long Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 35,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "broadsword",
+            "name": "Broadsword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 35,
+            "kind": "ms"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1    6(15)    35   0   35ms   20me     0    25    30     12    20      0     30(2)    35     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 15; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "long-bow",
+            "2": "broadsword"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": false
+        },
+        "pp": 0
+      },
+      {
+        "id": "p1",
+        "sourceKind": "master",
+        "name": "Rogue (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Rogue",
+        "level": 1,
+        "size": "M",
+        "armor_type": 7,
+        "db": 30,
+        "hits": 41,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "war-hammer",
+            "name": "War Hammer",
+            "kind": "me",
+            "category": "Weapon • 1-H Concussion",
+            "attackTable": "A-10.9.1",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "long-bow",
+            "name": "Long Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   7(30s)    41   0   50me   45ms    -10    15    35      7    15      0     25(2)    25     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "war-hammer",
+            "2": "long-bow"
+          }
+        },
+        "armorName": "Reinforced Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0
+      }
+    ],
+    "enemies": [
+      {
+        "id": "e0",
+        "sourceKind": "master",
+        "name": "Thief (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Thief",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 15,
+        "hits": 35,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "sling",
+            "name": "Sling",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 35,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "mace",
+            "name": "Mace",
+            "kind": "me",
+            "category": "Weapon • 1-H Concussion",
+            "attackTable": "A-10.9.1",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 35,
+            "kind": "ms"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1    6(15)    35   0   35ms   20me     0    25    30     12    20      0     30(2)    35     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 15; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "sling",
+            "2": "mace"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": false
+        },
+        "pp": 0
+      },
+      {
+        "id": "e1",
+        "sourceKind": "master",
+        "name": "Rogue (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Rogue",
+        "level": 1,
+        "size": "M",
+        "armor_type": 7,
+        "db": 30,
+        "hits": 41,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "sling",
+            "name": "Sling",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   7(30s)    41   0   50me   45ms    -10    15    35      7    15      0     25(2)    25     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "short-sword",
+            "2": "sling"
+          }
+        },
+        "armorName": "Reinforced Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0
+      }
+    ],
+    "options": {
+      "recordPlayback": true,
+      "persistentConsequences": true,
+      "support": null,
+      "geometry": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      },
+      "elements": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      }
+    },
+    "seed": "extraction-4",
+    "expected": "f8559aede76c0f6613336e7e875b5a655fcf4ea1a4a6a95ec4be32e86610d37d"
+  },
+  {
+    "party": [
+      {
+        "id": "p0",
+        "sourceKind": "master",
+        "name": "Rogue (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Rogue",
+        "level": 1,
+        "size": "M",
+        "armor_type": 7,
+        "db": 30,
+        "hits": 41,
+        "ppMax": 0,
+        "realm": "Essence",
+        "spellRanks": 0,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 50,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "short-bow",
+            "name": "Short Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 45,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 50,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 45,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   7(30s)    41   0   50me   45ms    -10    15    35      7    15      0     25(2)    25     -30    32   15(2)"
+        },
+        "special": "T-5.8 · 0 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "short-sword",
+            "2": "short-bow"
+          }
+        },
+        "armorName": "Reinforced Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 0,
+        "supportEffects": [
+          {
+            "until": 100,
+            "range": 100,
+            "group": "prayer",
+            "db": 10,
+            "rr": 10
+          }
+        ]
+      },
+      {
+        "id": "p1",
+        "sourceKind": "master",
+        "name": "Cleric (level 1)",
+        "group": "T-5.8 enemy",
+        "profession": "Cleric",
+        "level": 1,
+        "size": "M",
+        "armor_type": 6,
+        "db": 30,
+        "hits": 30,
+        "ppMax": 16,
+        "realm": "Channeling",
+        "spellRanks": 13,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "war-hammer",
+            "name": "War Hammer",
+            "kind": "me",
+            "category": "Weapon • 1-H Concussion",
+            "attackTable": "A-10.9.1",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 20,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 20,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 20,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": true,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "1   6(30s*)   30  16   20me   20me     0    -25    15     16    15     13    -25(0)    10     15     35   25(3)"
+        },
+        "special": "T-5.8 · 16 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "war-hammer",
+            "2": "short-sword"
+          }
+        },
+        "armorName": "Leather Coat",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 16
+      }
+    ],
+    "enemies": [
+      {
+        "id": "e0",
+        "sourceKind": "master",
+        "name": "Rogue (level 5)",
+        "group": "T-5.8 enemy",
+        "profession": "Rogue",
+        "level": 5,
+        "size": "M",
+        "armor_type": 13,
+        "db": 30,
+        "hits": 86,
+        "ppMax": 15,
+        "realm": "Essence",
+        "spellRanks": 1,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "quarterstaff",
+            "name": "Quarterstaff",
+            "kind": "me",
+            "category": "Weapon • 2-Handed",
+            "attackTable": "A-10.9.3",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 79,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "composite-bow",
+            "name": "Composite Bow",
+            "kind": "ms",
+            "category": "Weapon • Missile",
+            "attackTable": "A-10.9.4",
+            "criticalTable": "A-10.10.4",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 64,
+            "rawKind": "ms",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 79,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 64,
+            "kind": "ms"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": false,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "5   13(30s)   86  15   79me   64ms    -10    49    69     20    39      1     59(7)    64     14     34   49(4)"
+        },
+        "special": "T-5.8 · 15 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "quarterstaff",
+            "2": "composite-bow"
+          }
+        },
+        "armorName": "Chain Shirt",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 15
+      },
+      {
+        "id": "e1",
+        "sourceKind": "master",
+        "name": "Cleric (level 5)",
+        "group": "T-5.8 enemy",
+        "profession": "Cleric",
+        "level": 5,
+        "size": "M",
+        "armor_type": 10,
+        "db": 30,
+        "hits": 51,
+        "ppMax": 43,
+        "realm": "Channeling",
+        "spellRanks": 74,
+        "spellLists": [],
+        "spellPreset": true,
+        "attacks": [
+          {
+            "id": "short-sword",
+            "name": "Short Sword",
+            "kind": "me",
+            "category": "Weapon • 1-H Edged",
+            "attackTable": "A-10.9.2",
+            "criticalTable": "A-10.10.5",
+            "key": "slot-1",
+            "slot": 1,
+            "ob": 49,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 100,
+            "optional": false
+          },
+          {
+            "id": "quarterstaff",
+            "name": "Quarterstaff",
+            "kind": "me",
+            "category": "Weapon • 2-Handed",
+            "attackTable": "A-10.9.3",
+            "criticalTable": "A-10.10.3",
+            "key": "slot-2",
+            "slot": 2,
+            "ob": 39,
+            "rawKind": "me",
+            "type": "Wp",
+            "size": "M",
+            "chance": 0,
+            "optional": true
+          }
+        ],
+        "sourceAttacks": [
+          {
+            "slot": 1,
+            "ob": 49,
+            "kind": "me"
+          },
+          {
+            "slot": 2,
+            "ob": 39,
+            "kind": "me"
+          }
+        ],
+        "suggestedEquipment": [
+          "shield"
+        ],
+        "spellDefense": true,
+        "source": {
+          "code": "T-5.8",
+          "printedPage": 61,
+          "pdfPage": 62,
+          "raw": "5  10(30s*)   51  43   49me   39me    -10    19    29     26    34     74    19(1)    24     39     40   78(10)"
+        },
+        "special": "T-5.8 · 43 PPs. Printed DB 30 includes shield; spell increases are not added. Weapon types are configurable.",
+        "assignments": {
+          "version": 1,
+          "slots": {
+            "1": "short-sword",
+            "2": "quarterstaff"
+          }
+        },
+        "armorName": "Leather Breastplate & Greaves",
+        "tableOnly": true,
+        "selectedSpells": [],
+        "equipment": {
+          "shield": true
+        },
+        "pp": 43
+      }
+    ],
+    "options": {
+      "recordPlayback": true,
+      "persistentConsequences": true,
+      "support": {
+        "clock": 0,
+        "auras": []
+      },
+      "geometry": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      },
+      "elements": {
+        "autoRefresh": true,
+        "offerCount": 3,
+        "blessingsPerFighter": 1,
+        "attendantX": -30,
+        "partyX": 0,
+        "enemyX": 40,
+        "formationSpacing": 2,
+        "meleeReach": 3,
+        "targetRatios": [
+          0.65,
+          1,
+          1.35
+        ],
+        "historyLimit": 30,
+        "elementNames": {
+          "electricity": "shock|lightning|electric",
+          "cold": "cold|ice|frost",
+          "heat": "fire|heat|flame"
+        },
+        "elementTables": {
+          "A-10.10.1": "cold",
+          "A-10.10.2": "heat"
+        }
+      }
+    },
+    "seed": "extraction-5",
+    "expected": "bbdf4e5e06562fced41e06875f3217162549795e1c6a7ba6997de4239ea0fe0d"
+  }
+]

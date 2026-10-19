@@ -1,0 +1,366 @@
+{
+  "code": "A-10.11.1",
+  "title": "Weapon Fumble",
+  "printedPages": [
+    240
+  ],
+  "file": "A-10.11.1.json",
+  "tablePages": [
+    {
+      "printedPage": 240,
+      "pdfPage": 241,
+      "text": "WEAPON FUMBLE TABLE A-10.11.1\n        One-handed two-handed                                               polearms                        mounted                            thrown                            Missile\n                                                                                                                                                                                 Missle\n           Arms       arms                                                 and spears                        arms                               arms                            Weapons\n                                                                                                                                                                                weapons\n        Your palm is sweaty.             My that weapon is heavy!        You snag your own clothes       Your mount's tack tangles        Your grip is weak. You elect      Sweat trickles into your\n-25 Maybe you will improve.              You lose the opportunity to     and lose the opportunity to     your weapon. You lose the        not to attack because of          eye. You elect not to attack.\n                                         take a swing.                   take a swing.                   opportunity to take a strike.    control.                          Good choice.\n\n        Klutzy. Drop your weapon.        Your weapon flies. Take         Fumble your delivery and        Can't find the right angle.      You fumble your delivery          Your ten thumbs just\n-30 Spend two rounds             four rounds to recover it; or your weapon is out of\n    recovering it; or draw a new draw a new one next round. position. You lose the\n                                                                                                         You lose 2 rounds of attack\n                                                                                                         (but can still parry).\n                                                                                                                                          but hang onto your\n                                                                                                                                          weapon. You have -10 to\n                                                                                                                                                                            cannot handle loading. You\n                                                                                                                                                                            must reload your weapon.\n        one next round.                                                  option to attack.                                                your next attack.\n\n        Your feet get tangled. You       Your mind is wandering.         You just look clumsy. Your      You slip in the saddle. You      Your feet are really tangled      Your ammunition slips\n-40 miss the opportunity to get          Spend the rest of the round     feet are sliding. You are       lose 2 rounds of attack (but     up. You lose 2 rounds of          away. You must reload.\n        in that vital blow.              clearing your head.             stunned for one round.          can still parry).                attack, but can still parry.\n\n        You are over-extended and        Stumble over an imaginary       Your weapon is spinning       Your mount dodges an               You begin juggling your           You notice that your\n        strain a muscle. Take 1d5        dead turtle. You lose 2         for two rounds. You can still unseen foe. You are                weapon because of a bad           ammunition is faulty. After\n-50     hits.                            rounds of attack, but you       parry at -10.                 stunned for 2 rounds.              grip. Your lack of control        removing it you discover\n                                         can still parry.                                                                                 stuns you for 3 rounds.           you were wrong. Reload it.\n\n        You try to impress your          Your combination of             You stagger into a nearby       You lose your grip on your       Poor release. Weapon              Your ammunition keeps\n        opponent with a spin             acrobatics and attacks is       fixed object. You are           weapon. Luckily, it is           travels 2d10 feet to the left     jumping off of your\n-60     manuever. Too bad. Lose          unimpressive. Lose two          stunned and unable to           tangled in your mount's          of the target.                    weapon! Try melee next\n        two rounds while you             rounds of attacks, but you      parry for two rounds.           tack. Your lack of grace                                           time.\n        recover.                         can still parry.                                                stuns you for three rounds.\n        You snag your clothes with       Your weapon flies from          Your shaft tangles in your      Your poor mount stumbles.        Very poor release sends           Your weapon slips from\n        your weapon, causing it to       your hands, but you are         legs. You almost fall down      You are stunned for two          your weapon straight up!          your hands. Spend two\n-65     slip from your hand. Spend       able to catch it before it      in an impressive feat of        rounds.                          You duck for cover while          rounds recovering it; or\n        two rounds juggling it.          flies totally away. Lose two    entangling. Your next                                            your weapon checks for            draw a new weapon.\n                                         rounds of attack.               attack is at -20.                                                breakage.\n\n        You execute a perfect            Acrobatic manuever leaves       Your weapon must check          Your swing slices the tack       Your ferocious scream is          Take an 'A' Krush critical\n        attack—against closest ally      you flat on your back. Take     for breakage as you slam it     of your mount. You and           followed by silence as you        from the sudden release.\n66      (yourself if no one else is      2d10 hits and an 'E' Krush      into the ground! You are        your saddle take your leave      hit yourself. Take a 'D'          Your weapon snaps cleanly\n        around). Ally takes 1d10         critical.                       stunned for six rounds          of the poor beast. Take an       Krush critical.                   into two pieces.\n        hits and a 'B' critical.                                         because of the impact.          'A' Krush critical.\n\n        You trip over that uneven        You gracefully drop your        Your weapon seems to            Your tack has loosened!          You cannot control your           Your grip fails you and\n        surface. Spend two rounds        weapon to the ground. You       have a mind of it's own!        You suddenly slip                aim—your weapon flies             your weapon flies from\n-70     staggering. You can still        are able to kick it back into   Your next attack is at -50 as   sideways. You are stunned        2d10 feet to the right of the     your hands. Spend two\n        parry.                           your hand, but you lose         your try and get it under       for two rounds.                  intended target.                  rounds recovering it; or\n                                         two rounds while doing it.      control.                                                                                           draw a new weapon.\n\n        You are distracted by that       You strain your shoulders       Your ineptitude is obvious      Your weapon goes straight        Just as you are about to          Your bowstring breaks!\n        pixie in the corner. You lose    in a mighty swing (that         to all. You lose 3 rounds of    into the ground (check for       release, you step into an         Draw a new weapon or put\n-80     2 rounds of attacks.             misses). You are stunned        attacks and are stunned for     breakage).                       imaginary hole in the             a new string on this one.\n                                         for two rounds.                 2 rounds.                                                        ground. Lose 3 rounds\n                                                                                                                                          getting up from the ground.\n\n        You are suddenly very            You lose your grip as you       Clumsy move narrowly            Your weapon flies out of         Your weapon drops to the          Your weapon bites back\n        winded. Take two rounds          begin your swing. Your          misses your own head. You       your hand! Draw a new            ground as you begin to aim.       when you fire. Your shot\n        to relax.                        weapon is trying to slip        are stunned and unable to       one.                             Take four rounds to               misses everything, but you\n-85                                      away. Spend three rounds        parry for three rounds (try                                      recover this one; or draw a       are stunned and unable to\n                                         gaining control. You can        a bow next time).                                                new one.                          parry for three rounds.\n                                         still parry.\n        Hopefully, you will learn        You pulled something on         There it goes! Your weapon      Your weapon must check           Your poor and weak                You release too soon! Your\n        that dancing is not              that last swing and now it      skitters away. Take six         for breakage as it hits the      release sends the weapon          arrow falls 3d10 feet short\n        appropriate in combat. Your      begins to hurt! You are         rounds to recover it; or        hardest part of your foe.        up two feet. It immediately       of the target. In addition,\n-90     are stunned for two rounds       stunned for three rounds        draw a new one.                 You take 2d10 hits from the      comes down and hits you.          you spend two rounds\n        by your lack of ability.         while you recover.                                              blast.                           You take no damage, but           trying to finds more\n                                                                                                                                          are stunned for six rounds.       ammunition.\n\n        You fall down as your            You fall and narrowly miss      You fall and smack your         Your mount bucks                Your weapon flies behind           Your shot goes astray as\n        swing goes wide. You are         gutting yourself! You are       head on the ground. You are     unexpectedly just as you        you,4d10\n                                                                                                                                              travelling\n                                                                                                                                                   feet! 4d10 feet          you slip and fall during your\n        stunned for three rounds.        stunned for four rounds.        down for four rounds and        were about to swing. You        before landing.                    release. You are stunned\n-95                                                                      stunned for three.              find yourself stunned and                                          for six rounds and unable\n                                                                                                         unable to parry for three                                          to parry for two rounds.\n                                                                                                         rounds.\n\n        The excitement is just too       You trip and fall. You are      Your shoulder doesn't           Your mount jumps wildly.         You trip as you release.           Your weapon shatters (as\n        much! Your momentary             down for four rounds and        bend that way! You are          You take 4d10 hits from the      Your shot goes off wildly         you don't realize your own\n-99     frenzy leaves you stunned        unable to parry for three.      stunned and unable to           impact and are stunned and       and you are stunned for           strength)! You are stunned\n        and unable to parry for                                          parry for three rounds. You     unable to parry for six          twelve rounds.                           for 4 rounds.\n        three rounds.                                                    now fight at -25.               rounds.\n\n        You attempt to maim              Worst move seen in ages!        Your weapon breaks and          You can't stay on your           You accidently hit yourself       Poor execution. You take 5\n        yourself. Take a 'D' critical.   You are out for 2 days with     one end hits you in the         mount! You fall and take a       in the delivery. Take a 'D'       hits as the weapon hits you.\n                                         a groin injury. There is a      head. You are stunned and       'D' crush critical.              Krush critical.                   You are permanently\n00                                       50% chance your foes will       unable to parry for six                                                                            maimed and are bleeding 2\n                                         be out for 3 rounds,            rounds.                                                                                            hits per round.\n                                         laughing.\n           Key:    ßπ = must parry ß rounds; ß∏ = no parry for ß rounds; ß∑ = stunned for ß rounds;    ß∫ = bleed ß hits per round; (-ß) = foe has -ß penalty;   (+ß) = attacker gets +ß next round."
+    }
+  ],
+  "kind": "fumble",
+  "columns": [
+    {
+      "group": "Weapon",
+      "label": "One-handed arms"
+    },
+    {
+      "group": "Weapon",
+      "label": "Two-handed arms"
+    },
+    {
+      "group": "Weapon",
+      "label": "Polearms and spears"
+    },
+    {
+      "group": "Weapon",
+      "label": "Mounted arms"
+    },
+    {
+      "group": "Weapon",
+      "label": "Thrown arms"
+    },
+    {
+      "group": "Weapon",
+      "label": "Missile weapons"
+    }
+  ],
+  "rows": [
+    {
+      "roll": "01-25",
+      "cells": [
+        {
+          "description": "Your palm is sweaty. Maybe you will improve."
+        },
+        {
+          "description": "My that weapon is heavy! You lose the opportunity to take a swing."
+        },
+        {
+          "description": "You snag your own clothes and lose the opportunity to take a swing."
+        },
+        {
+          "description": "Your mount's tack tangles your weapon. You lose the opportunity to take a strike."
+        },
+        {
+          "description": "Your grip is weak. You elect not to attack because of control."
+        },
+        {
+          "description": "Sweat trickles into your eye. You elect not to attack. Good choice."
+        }
+      ]
+    },
+    {
+      "roll": "26-30",
+      "cells": [
+        {
+          "description": "Klutzy. Drop your weapon. Spend two rounds recovering it; or draw a new one next round."
+        },
+        {
+          "description": "Your weapon flies. Take four rounds to recover it; or draw a new one next round."
+        },
+        {
+          "description": "Fumble your delivery and your weapon is out of position. You lose the option to attack."
+        },
+        {
+          "description": "Can't find the right angle. You lose 2 rounds of attack (but can still parry)."
+        },
+        {
+          "description": "You fumble your delivery but hang onto your weapon. You have -10 to your next attack."
+        },
+        {
+          "description": "Your ten thumbs just cannot handle loading. You must reload your weapon."
+        }
+      ]
+    },
+    {
+      "roll": "31-40",
+      "cells": [
+        {
+          "description": "Your feet get tangled. You miss the opportunity to get in that vital blow."
+        },
+        {
+          "description": "Your mind is wandering. Spend the rest of the round clearing your head."
+        },
+        {
+          "description": "You just look clumsy. Your feet are sliding. You are stunned for one round."
+        },
+        {
+          "description": "You slip in the saddle. You lose 2 rounds of attack (but can still parry)."
+        },
+        {
+          "description": "Your feet are really tangled up. You lose 2 rounds of attack, but can still parry."
+        },
+        {
+          "description": "Your ammunition slips away. You must reload."
+        }
+      ]
+    },
+    {
+      "roll": "41-50",
+      "cells": [
+        {
+          "description": "You are over-extended and a muscle. Take 1d5 strain hits."
+        },
+        {
+          "description": "Stumble over an imaginary dead turtle. You lose 2 rounds of attack, but you can still parry."
+        },
+        {
+          "description": "Your weapon is spinning for two rounds. You can still parry at -10."
+        },
+        {
+          "description": "Your mount dodges an unseen foe. You are stunned for 2 rounds."
+        },
+        {
+          "description": "You begin juggling your weapon because of a bad grip. Your lack of control stuns you for 3 rounds."
+        },
+        {
+          "description": "You notice that your ammunition is faulty. After removing it you discover you were wrong. Reload it."
+        }
+      ]
+    },
+    {
+      "roll": "51-60",
+      "cells": [
+        {
+          "description": "You try to impress your opponent with a spin manuever. Too bad. Lose two rounds while you recover."
+        },
+        {
+          "description": "Your combination of acrobatics and attacks is unimpressive. Lose two rounds of attacks, but you can still parry."
+        },
+        {
+          "description": "You stagger into a nearby fixed object. You are stunned and unable to parry for two rounds."
+        },
+        {
+          "description": "You lose your grip on your weapon. Luckily, it is tangled in your mount's tack. Your lack of grace stuns you for three rounds."
+        },
+        {
+          "description": "Poor release. Weapon travels 2d10 feet to the left of the target."
+        },
+        {
+          "description": "Your ammunition keeps jumping off of your weapon! Try melee next time."
+        }
+      ]
+    },
+    {
+      "roll": "61-65",
+      "cells": [
+        {
+          "description": "You snag your clothes with your weapon, causing it to slip from your hand. Spend two rounds juggling it."
+        },
+        {
+          "description": "Your weapon flies from your hands, but you are able to catch it before it flies totally away. Lose two rounds of attack."
+        },
+        {
+          "description": "Your shaft tangles in your legs. You almost fall down in an impressive feat of entangling. Your next attack is at -20."
+        },
+        {
+          "description": "Your poor mount stumbles. You are stunned for two rounds."
+        },
+        {
+          "description": "Very poor release sends your weapon straight up! You duck for cover while your weapon checks for breakage."
+        },
+        {
+          "description": "Your weapon slips from your hands. Spend two rounds recovering it; or draw a new weapon."
+        }
+      ]
+    },
+    {
+      "roll": "66",
+      "cells": [
+        {
+          "description": "You execute a perfect attack—against closest ally (yourself if no one else is around). Ally takes 1d10 hits and a 'B' critical."
+        },
+        {
+          "description": "Acrobatic manuever leaves you flat on your back. Take 2d10 hits and an 'E' Krush critical."
+        },
+        {
+          "description": "Your weapon must check for breakage as you slam it into the ground! You are stunned for six rounds because of the impact."
+        },
+        {
+          "description": "Your swing slices the tack of your mount. You and your saddle take your leave of the poor beast. Take an 'A' Krush critical."
+        },
+        {
+          "description": "Your ferocious scream is followed by silence as you hit yourself. Take a 'D' Krush critical."
+        },
+        {
+          "description": "Take an 'A' Krush critical from the sudden release. Your weapon snaps cleanly into two pieces."
+        }
+      ]
+    },
+    {
+      "roll": "67-70",
+      "cells": [
+        {
+          "description": "You trip over that uneven surface. Spend two rounds staggering. You can still parry."
+        },
+        {
+          "description": "You gracefully drop your weapon to the ground. You are able to kick it back into your hand, but you lose two rounds while doing it."
+        },
+        {
+          "description": "Your weapon seems to have a mind of it's own! Your next attack is at -50 as your try and get it under control."
+        },
+        {
+          "description": "Your tack has loosened! You suddenly slip sideways. You are stunned for two rounds."
+        },
+        {
+          "description": "You cannot control your aim—your weapon flies 2d10 feet to the right of the intended target."
+        },
+        {
+          "description": "Your grip fails you and your weapon flies from your hands. Spend two rounds recovering it; or draw a new weapon."
+        }
+      ]
+    },
+    {
+      "roll": "71-80",
+      "cells": [
+        {
+          "description": "You are distracted by that pixie in the corner. You lose 2 rounds of attacks."
+        },
+        {
+          "description": "You strain your shoulders in a mighty swing (that misses). You are stunned for two rounds."
+        },
+        {
+          "description": "Your ineptitude is obvious to all. You lose 3 rounds of attacks and are stunned for 2 rounds."
+        },
+        {
+          "description": "Your weapon goes straight into the ground (check for breakage)."
+        },
+        {
+          "description": "Just as you are about to release, you step into an imaginary hole in the ground. Lose 3 rounds getting up from the ground."
+        },
+        {
+          "description": "Your bowstring breaks! Draw a new weapon or put a new string on this one."
+        }
+      ]
+    },
+    {
+      "roll": "81-85",
+      "cells": [
+        {
+          "description": "You are suddenly very winded. Take two rounds to relax."
+        },
+        {
+          "description": "You lose your grip as you begin your swing. Your weapon is trying to slip away. Spend three rounds gaining control. You can still parry."
+        },
+        {
+          "description": "Clumsy move narrowly misses your own head. You are stunned and unable to parry for three rounds (try a bow next time)."
+        },
+        {
+          "description": "Your weapon flies out of your hand! Draw a new one."
+        },
+        {
+          "description": "Your weapon drops to the ground as you begin to aim. Take four rounds to recover this one; or draw a new one."
+        },
+        {
+          "description": "Your weapon bites back when you fire. Your shot misses everything, but you are stunned and unable to parry for three rounds."
+        }
+      ]
+    },
+    {
+      "roll": "86-90",
+      "cells": [
+        {
+          "description": "Hopefully, you will learn that dancing is not appropriate in combat. Your are stunned for two rounds by your lack of ability."
+        },
+        {
+          "description": "You pulled something on that last swing and now it begins to hurt! You are stunned for three rounds while you recover."
+        },
+        {
+          "description": "There it goes! Your weapon skitters away. Take six rounds to recover it; or draw a new one."
+        },
+        {
+          "description": "Your weapon must check for breakage as it hits the hardest part of your foe. You take 2d10 hits from the blast."
+        },
+        {
+          "description": "Your poor and weak release sends the weapon up two feet. It immediately comes down and hits you. You take no damage, but are stunned for six rounds."
+        },
+        {
+          "description": "You release too soon! Your arrow falls 3d10 feet short of the target. In addition, you spend two rounds trying to finds more ammunition."
+        }
+      ]
+    },
+    {
+      "roll": "91-95",
+      "cells": [
+        {
+          "description": "You fall down as your swing goes wide. You are stunned for three rounds."
+        },
+        {
+          "description": "You fall and narrowly miss gutting yourself! You are stunned for four rounds."
+        },
+        {
+          "description": "You fall and smack your head on the ground. You are down for four rounds and stunned for three."
+        },
+        {
+          "description": "Your mount bucks unexpectedly just as you were about to swing. You find yourself stunned and unable to parry for three rounds."
+        },
+        {
+          "description": "Your weapon flies behind you, 4d10 travelling feet! 4d10 feet before landing."
+        },
+        {
+          "description": "Your shot goes astray as you slip and fall during your release. You are stunned for six rounds and unable to parry for two rounds."
+        }
+      ]
+    },
+    {
+      "roll": "96-99",
+      "cells": [
+        {
+          "description": "The excitement is just too much! Your momentary frenzy leaves you stunned and unable to parry for three rounds."
+        },
+        {
+          "description": "You trip and fall. You are down for four rounds and unable to parry for three."
+        },
+        {
+          "description": "Your shoulder doesn't bend that way! You are stunned and unable to parry for three rounds. You now fight at -25."
+        },
+        {
+          "description": "Your mount jumps wildly. You take 4d10 hits from the impact and are stunned and unable to parry for six rounds."
+        },
+        {
+          "description": "You trip as you release. Your shot goes off wildly and you are stunned for twelve rounds."
+        },
+        {
+          "description": "Your weapon shatters (as you don't realize your own strength)! You are stunned for 4 rounds."
+        }
+      ]
+    },
+    {
+      "roll": "100",
+      "cells": [
+        {
+          "description": "You attempt to maim yourself. Take a 'D' critical."
+        },
+        {
+          "description": "Worst move seen in ages! You are out for 2 days with a groin injury. There is a 50% chance your foes will be out for 3 rounds, laughing."
+        },
+        {
+          "description": "Your weapon breaks and one end hits you in the head. You are stunned and unable to parry for six rounds."
+        },
+        {
+          "description": "You can't stay on your mount! You fall and take a 'D' crush critical."
+        },
+        {
+          "description": "You accidently hit yourself in the delivery. Take a 'D' Krush critical."
+        },
+        {
+          "description": "Poor execution. You take 5 hits as the weapon hits you. You are permanently maimed and are bleeding 2 hits per round."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,342 @@
+{
+  "code": "A-10.11.2",
+  "title": "Spell Failure",
+  "printedPages": [
+    241
+  ],
+  "file": "A-10.11.2.json",
+  "tablePages": [
+    {
+      "printedPage": 241,
+      "pdfPage": 242,
+      "text": "                                                                      SPELL FAILURE TABLE A-10.11.2\n                                         ATTACK SPELLS                                                                                  NON-ATTACK SPELLS\n                      ELEMENTAL                                                  FORCE                                 INFORMATIONAL                                                  OTHER\n            That gnat just landed in your ear. You must          Your target's grace distracts you. You lose        Momentary lapse in concentration delays the        You stumble across the incantation and\n01-20       begin casting the spell again (but do not lose       the spell (and one power point).                   casting of the spell for one round.                delay the casting of the spell for one round.\n            the power points).\n            Your fingertips spark and surprise you. You          You remember a childhood incident that was         You only gain one small bit of information.        You cannot remember the final words for\n            lose\n            You the\n                 losespell (and one\n                      the spell     power\n                                (and one   points).\n                                         power      You\n                                                 point).         traumatizing. You lose the spell (but not the      Unfortunately, that information is outdated        the spell. Lose the spell (but not the power\n21-30       operate\n            You      at a at\n                 operate  -50a -50\n                              modification next next\n                                   modification round.\n                                                     round.      power points). Operate at -10 for five             (or incorrect).                                    points).\n                                                                 rounds.\n            Minor power backlash. You lose the spell             The magic blurs your vision. You lose the          You gain half of the desired information; but      Your head pounds. You have to stop casting\n31-40       (and half the number of power points                 spell (and half the number of power points         it is incorrect.                                   (lose the spell, but not the power points).\n            –rounded down). Stunned for 1 round.                 –rounded down). Stunned for 1 round.\n            You realize you are casting the wrong spell.         The planets are not aligned correctly! Your        The information you gain is correct, but you       A momentary mental lapse cause you to\n41-60       You must start over. Lose the power points.          spell has absolutely no effect (and you lose       have no idea what the topic was!                   forget your place in the spell (lose the spell,\n            and the spell.                                       the power points).                                                                                    but not the power points).\n            You feel a spider crawling up your back! You         Your target must be blessed! Your spell has        You gain correct information about a similar       While casting, you notice that shadows are\n61-75       lose the spell and the power points.                 no effect and you lose double the normal           topic to that which you were seeking. You          beginning to move. You immediately stop\n                                                                 number of power points.                            are so surprised, you are stunned 1 round.         casting (lose the spell and 1 power point).\n\n            The spell fails! Flames rolls down your arm.         Power backlash! The spell fails entirely. You      You cannot make out the information due to         A muscle cramp in your jaw causes your\n            You take 5 hits and are stunned for 3                are stunned for 8 rounds.                          extraneous feedback.                               spell to fail. Lose the spell, and half the\n76-90       rounds.                                                                                                                                                    normal points (rounded down). You are\n                                                                                                                                                                       stunned for two rounds.\n            The elements refuse your call! You are               The target's will is stronger than yours! You      You gain a bit of ominous information about        You are seeing stars. You must cancel the\n91-95       knocked back 3 feet (taking 2d10 hits), and          collapse on the ground (taking d10 hits).          your own death! You are stunned for one            spell. Lose the spell, and half the normal\n            are stunned for six rounds.                          and are stunned for 9 rounds.                      round.                                             power points (rounded down). You are\n                                                                                                                                                                       stunned for one round.\n            Instead of launching, the elements engulf            The spell internalizes. You take 4d10 hits         You gain one piece of very specific, incorrect     You internalize the spell. You take 2d10 hits\n96-         you. Take 20 hits and a 'B' crtical strike.          and knocked unconscious for 12 hours.              information. However, you experience power         and are stunned for 2d10 rounds.\n100                                                                                                                 feedback (take d10 hits).\n\n\n            The elemental attack strays to the right of          The spell affects a random target to the right     Power feedback causes the information to           The spell strays to points unknown. You are\n101-        the intended target. You are stunned for             of the intended target. You are stunned for        be garbled. You are stunned for two rounds.        stunned for three rounds.\n125         three rounds.                                        one round and take d10 hits (from the\n                                                                 mental strain).\n            An unforseen cosmic shift causes the spell           You lose control and the spell hits a target to    You gain useless information about an              For some reason, the spell does not work!\n            to veer to the left of the target (striking the      the left of the intended target. Make another      unknown target. In addition, there is so           You are stunned for four rounds while you\n126-        nearest target). This sudden change causes           attack against a random target within range.       much information, that you are stunned for         try and figure it out.\n150         mental strain; take 5 hits and you are               You are stunned for one round and take d10         three rounds.\n            stunned for one round.                               hits from the wild attack.\n\n\n            You get the polarity backwards! The                  The spell targets a random victim that can         You strain too hard to get the information.        You have been working too hard. The spell\n151-        elements travel 180˚ from the intended               be anywhere with 500'. The power backlash          Your spell fails utterly and you take 3 hits       misfires badly. You take d10 hits and are\n            direction (hitting any available target). In the     short circuits your brain. Take 25 hits and        (and are stunned for 5 rounds).                    stunned for d10 rounds.\n175         wake, you take 5d10 hits and a 'C' critical          are unable to function for d10 hours.\n            strike.\n            The elements cannot be controlled! Your              The spell lodges in your head. You suffer          Something just is not right here. The              The spell misfires in your head. Take 2d10\n176-        brain is fried (lose all spell casting ability for   brain damage; you operate at a -75                 massive overload in your head knocks you           hits while you are knocked down. You are\n            1 week). You operate at -50 for 3 months (or         modification for d10 months (or until brain        down (take five hits). Spend 5d10 minutes          unable to function for one hour.\n185         until brain is repaired).                            is repaired). You lose all spell casting ability   recovering (no other actions allowed).\n                                                                 for 1 week).\n            The spell explodes immediately as you cast           The spell misfires and internalizes inside         The utter nothingness that you discern takes       Severe power feedback knocks you down.\n186-        it! Make a point blank attack on yourself.           your head. Take 35 hits. You lose spell            you close to death. Take 2d10 hits and an 'A'      Take 1d10 hits and an 'A' Impact critical.\n            You are in a coma for 1 week (and lose spell         casting ability for d10 weeks. There is a 40%      Impact critical as you recover. You must           You are unable to function for d10 hours.\n191         casting ability for 2 weeks).                        chance of falling into a d10 day coma.             spend one hour doing nothing.\n\n\n            The elements attack you. Take 10d10 hits             You suffer a massive stroke! Take 10d10            You have seen your own death! You                  You have just acquired a nervous disorder\n            and d10 'C' critical strikes. After the assault,     hits and fall into a month-long coma. At the       collpase to the ground (take 3d10 hits and         GM's discretion). You lose all spell casting\n192-        you will fall into a coma for 5 weeks. After         end of the coma, you will seem fine; but will      you are unconscious for d10 hours). You            ability for d10 weeks. You slam yourself into\n195         the coma, you will seem fine; but will die 6         die d10 hours later.                               now suffer from Paranoia.                          the nearest solid object (take 5d10 hits) and\n            hours later.                                                                                                                                               knock yourself out (for 12 hours).\n\n            The power is too much to control. The                The spell completely short circuits your           You are the victim of a mild stroke. Take          You suffer a mild stroke. Take 20 hits and\n196-        elements refuse to rise to your command.             nervous system. You are paralyzed from the         4d10 hits and lose all spell casting ability for   lose all spell casting ability for two weeks. In\n200         The spell internalizes and paralyzes your            waist down.                                        one week. In addition, you will have a -40         addition, you will have a -50 penalty for d10\n            torso.                                                                                                  penalty for d10 days.                              days.\n            The elements control you! Take 8d10                  The spell completely internalizes. You lose        The spell short circuits. Take 20 hits and         You internalize the spell. Take 4d10 hits and\n201-        concussion hits and a d10 'E' critical strikes.      all spell casting ability for d10 weeks and        knock yourself out for 9 hours. You lose all       you are knocked out for 2d10 hours. You\n            After displaying your failure, you will fall into    will be in a coma for d10 weeks. Take 8d10         spell casting ability for 4 weeks.                 have lost all spell casting ability for d10\n250         a coma for 3 weeks (and lose spell casting           hits.                                                                                                 weeks.\n            ability for d10 weeks).\n            You slip into the elemental planes for d10           Severe nervous disorder causes you to lose         You now have a nervous tick. You are               You now suffer from a nervous disorder\n            rounds. When you return, you realize that            all your spell casting ability for d10 months.     stunned for d10 rounds. Anytime you                (GM's discretion). You are stunned for 2d10\n251-        you have lost all your spell casting ability for                                                        attempt to cast this spell in the future will      rounds and can no longer cast this spell.\n300         d10 months.                                                                                             result in deterioation of the nervous tick\n                                                                                                                    (eventually, you will become a quivvering\n                                                                                                                    blob).\n            All of the elements visit you at once. All that      Massive internalization of spell. Instant brain    You have seen Armageddon. This results in          You suffer a severe stroke. You drop into a\n301+        is left is a charred mass of flesh.                  death.                                             brain shut-down. You are in a coma for 3           coma for d10 months.\n                                                                                                                    months.\n\n\n Key:   ßπ = must parry ß rounds; ß∏ = no parry for ß rounds; ß∑ = stunned for ß rounds;           ß∫ = bleed ß hits per round; (-ß) = foe has -ß penalty;   (+ß) = attacker gets +ß next round."
+    }
+  ],
+  "kind": "fumble",
+  "columns": [
+    {
+      "group": "Attack spell",
+      "label": "Elemental"
+    },
+    {
+      "group": "Attack spell",
+      "label": "Force"
+    },
+    {
+      "group": "Non-attack spell",
+      "label": "Informational"
+    },
+    {
+      "group": "Non-attack spell",
+      "label": "Other"
+    }
+  ],
+  "rows": [
+    {
+      "roll": "01-20",
+      "cells": [
+        {
+          "description": "That gnat just landed in your ear. You must begin casting the spell again (but do not lose the power points)."
+        },
+        {
+          "description": "Your target's grace distracts you. You lose the spell (and one power point)."
+        },
+        {
+          "description": "Momentary lapse in concentration delays the casting of the spell for one round."
+        },
+        {
+          "description": "You stumble across the incantation and delay the casting of the spell for one round."
+        }
+      ]
+    },
+    {
+      "roll": "21-30",
+      "cells": [
+        {
+          "description": "Your fingertips spark and surprise you. You lose the spell (and one power point). You operate at a -50 modification next round."
+        },
+        {
+          "description": "You remember a childhood incident that was traumatizing. You lose the spell (but not the power points). Operate at -10 for five rounds."
+        },
+        {
+          "description": "You only gain one small bit of information. Unfortunately, that information is outdated (or incorrect)."
+        },
+        {
+          "description": "You cannot remember the final words for the spell. Lose the spell (but not the power points)."
+        }
+      ]
+    },
+    {
+      "roll": "31-40",
+      "cells": [
+        {
+          "description": "Minor power backlash. You lose the spell (and half the number of power points –rounded down). Stunned for 1 round."
+        },
+        {
+          "description": "The magic blurs your vision. You lose the spell (and half the number of power points –rounded down). Stunned for 1 round."
+        },
+        {
+          "description": "You gain half of the desired information; but it is incorrect."
+        },
+        {
+          "description": "Your head pounds. You have to stop casting (lose the spell, but not the power points)."
+        }
+      ]
+    },
+    {
+      "roll": "41-60",
+      "cells": [
+        {
+          "description": "You realize you are casting the wrong spell. You must start over. Lose the power points. and the spell."
+        },
+        {
+          "description": "The planets are not aligned correctly! Your spell has absolutely no effect (and you lose the power points)."
+        },
+        {
+          "description": "The information you gain is correct, but you have no idea what the topic was!"
+        },
+        {
+          "description": "A momentary mental lapse cause you to forget your place in the spell (lose the spell, but not the power points)."
+        }
+      ]
+    },
+    {
+      "roll": "61-75",
+      "cells": [
+        {
+          "description": "You feel a spider crawling up your back! You lose the spell and the power points."
+        },
+        {
+          "description": "Your target must be blessed! Your spell has no effect and you lose double the normal number of power points."
+        },
+        {
+          "description": "You gain correct information about a similar topic to that which you were seeking. You are so surprised, you are stunned 1 round."
+        },
+        {
+          "description": "While casting, you notice that shadows are beginning to move. You immediately stop casting (lose the spell and 1 power point)."
+        }
+      ]
+    },
+    {
+      "roll": "76-90",
+      "cells": [
+        {
+          "description": "The spell fails! Flames rolls down your arm. You take 5 hits and are stunned for 3 rounds."
+        },
+        {
+          "description": "Power backlash! The spell fails entirely. You are stunned for 8 rounds."
+        },
+        {
+          "description": "You cannot make out the information due to extraneous feedback."
+        },
+        {
+          "description": "A muscle cramp in your jaw causes your spell to fail. Lose the spell, and half the normal points (rounded down). You are stunned for two rounds."
+        }
+      ]
+    },
+    {
+      "roll": "91-95",
+      "cells": [
+        {
+          "description": "The elements refuse your call! You are knocked back 3 feet (taking 2d10 hits), and are stunned for six rounds."
+        },
+        {
+          "description": "The target's will is stronger than yours! You collapse on the ground (taking d10 hits). and are stunned for 9 rounds."
+        },
+        {
+          "description": "You gain a bit of ominous information about your own death! You are stunned for one round."
+        },
+        {
+          "description": "You are seeing stars. You must cancel the spell. Lose the spell, and half the normal power points (rounded down). You are stunned for one round."
+        }
+      ]
+    },
+    {
+      "roll": "96-100",
+      "cells": [
+        {
+          "description": "Instead of launching, the elements engulf you. Take 20 hits and a 'B' crtical strike."
+        },
+        {
+          "description": "The spell internalizes. You take 4d10 hits and knocked unconscious for 12 hours."
+        },
+        {
+          "description": "You gain one piece of very specific, incorrect information. However, you experience power feedback (take d10 hits)."
+        },
+        {
+          "description": "You internalize the spell. You take 2d10 hits and are stunned for 2d10 rounds."
+        }
+      ]
+    },
+    {
+      "roll": "101-125",
+      "cells": [
+        {
+          "description": "The elemental attack strays to the right of the intended target. You are stunned for three rounds."
+        },
+        {
+          "description": "The spell affects a random target to the right of the intended target. You are stunned for one round and take d10 hits (from the mental strain)."
+        },
+        {
+          "description": "Power feedback causes the information to be garbled. You are stunned for two rounds."
+        },
+        {
+          "description": "The spell strays to points unknown. You are stunned for three rounds."
+        }
+      ]
+    },
+    {
+      "roll": "126-150",
+      "cells": [
+        {
+          "description": "An unforseen cosmic shift causes the spell to veer to the left of the target (striking the nearest target). This sudden change causes mental strain; take 5 hits and you are stunned for one round."
+        },
+        {
+          "description": "You lose control and the spell hits a target to the left of the intended target. Make another attack against a random target within range. You are stunned for one round and take d10 hits from the wild attack."
+        },
+        {
+          "description": "You gain useless information about an unknown target. In addition, there is so much information, that you are stunned for three rounds."
+        },
+        {
+          "description": "For some reason, the spell does not work! You are stunned for four rounds while you try and figure it out."
+        }
+      ]
+    },
+    {
+      "roll": "151-175",
+      "cells": [
+        {
+          "description": "You get the polarity backwards! The elements travel 180˚ from the intended direction (hitting any available target). In the wake, you take 5d10 hits and a 'C' critical strike."
+        },
+        {
+          "description": "The spell targets a random victim that can be anywhere with 500'. The power backlash short circuits your brain. Take 25 hits and are unable to function for d10 hours."
+        },
+        {
+          "description": "You strain too hard to get the information. Your spell fails utterly and you take 3 hits (and are stunned for 5 rounds)."
+        },
+        {
+          "description": "You have been working too hard. The spell misfires badly. You take d10 hits and are stunned for d10 rounds."
+        }
+      ]
+    },
+    {
+      "roll": "176-185",
+      "cells": [
+        {
+          "description": "The elements cannot be controlled! Your brain is fried (lose all spell casting ability for 1 week). You operate at -50 for 3 months (or until brain is repaired)."
+        },
+        {
+          "description": "The spell lodges in your head. You suffer brain damage; you operate at a -75 modification for d10 months (or until brain is repaired). You lose all spell casting ability for 1 week)."
+        },
+        {
+          "description": "Something just is not right here. The massive overload in your head knocks you down (take five hits). Spend 5d10 minutes recovering (no other actions allowed)."
+        },
+        {
+          "description": "The spell misfires in your head. Take 2d10 hits while you are knocked down. You are unable to function for one hour."
+        }
+      ]
+    },
+    {
+      "roll": "186-191",
+      "cells": [
+        {
+          "description": "The spell explodes immediately as you cast it! Make a point blank attack on yourself. You are in a coma for 1 week (and lose spell casting ability for 2 weeks)."
+        },
+        {
+          "description": "The spell misfires and internalizes inside your head. Take 35 hits. You lose spell casting ability for d10 weeks. There is a 40% chance of falling into a d10 day coma."
+        },
+        {
+          "description": "The utter nothingness that you discern takes you close to death. Take 2d10 hits and an 'A' Impact critical as you recover. You must spend one hour doing nothing."
+        },
+        {
+          "description": "Severe power feedback knocks you down. Take 1d10 hits and an 'A' Impact critical. You are unable to function for d10 hours."
+        }
+      ]
+    },
+    {
+      "roll": "192-195",
+      "cells": [
+        {
+          "description": "The elements attack you. Take 10d10 hits and d10 'C' critical strikes. After the assault, you will fall into a coma for 5 weeks. After the coma, you will seem fine; but will die 6 hours later."
+        },
+        {
+          "description": "You suffer a massive stroke! Take 10d10 hits and fall into a month-long coma. At the end of the coma, you will seem fine; but will die d10 hours later."
+        },
+        {
+          "description": "You have seen your own death! You collpase to the ground (take 3d10 hits and you are unconscious for d10 hours). You now suffer from Paranoia."
+        },
+        {
+          "description": "You have just acquired a nervous disorder GM's discretion). You lose all spell casting ability for d10 weeks. You slam yourself into the nearest solid object (take 5d10 hits) and knock yourself out (for 12 hours)."
+        }
+      ]
+    },
+    {
+      "roll": "196-200",
+      "cells": [
+        {
+          "description": "The power is too much to control. The elements refuse to rise to your command. The spell internalizes and paralyzes your torso."
+        },
+        {
+          "description": "The spell completely short circuits your nervous system. You are paralyzed from the waist down."
+        },
+        {
+          "description": "You are the victim of a mild stroke. Take 4d10 hits and lose all spell casting ability for one week. In addition, you will have a -40 penalty for d10 days."
+        },
+        {
+          "description": "You suffer a mild stroke. Take 20 hits and lose all spell casting ability for two weeks. In addition, you will have a -50 penalty for d10 days."
+        }
+      ]
+    },
+    {
+      "roll": "201-250",
+      "cells": [
+        {
+          "description": "The elements control you! Take 8d10 concussion hits and a d10 'E' critical strikes. After displaying your failure, you will fall into a coma for 3 weeks (and lose spell casting ability for d10 weeks)."
+        },
+        {
+          "description": "The spell completely internalizes. You lose all spell casting ability for d10 weeks and will be in a coma for d10 weeks. Take 8d10 hits."
+        },
+        {
+          "description": "The spell short circuits. Take 20 hits and knock yourself out for 9 hours. You lose all spell casting ability for 4 weeks."
+        },
+        {
+          "description": "You internalize the spell. Take 4d10 hits and you are knocked out for 2d10 hours. You have lost all spell casting ability for d10 weeks."
+        }
+      ]
+    },
+    {
+      "roll": "251-300",
+      "cells": [
+        {
+          "description": "You slip into the elemental planes for d10 rounds. When you return, you realize that you have lost all your spell casting ability for d10 months."
+        },
+        {
+          "description": "Severe nervous disorder causes you to lose all your spell casting ability for d10 months."
+        },
+        {
+          "description": "You now have a nervous tick. You are stunned for d10 rounds. Anytime you attempt to cast this spell in the future will result in deterioation of the nervous tick (eventually, you will become a quivvering blob)."
+        },
+        {
+          "description": "You now suffer from a nervous disorder (GM's discretion). You are stunned for 2d10 rounds and can no longer cast this spell."
+        }
+      ]
+    },
+    {
+      "roll": "301+",
+      "cells": [
+        {
+          "description": "All of the elements visit you at once. All that is left is a charred mass of flesh."
+        },
+        {
+          "description": "Massive internalization of spell. Instant brain death."
+        },
+        {
+          "description": "You have seen Armageddon. This results in brain shut-down. You are in a coma for 3 months."
+        },
+        {
+          "description": "You suffer a severe stroke. You drop into a coma for d10 months."
+        }
+      ]
+    }
+  ]
+}

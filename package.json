@@ -1,0 +1,49 @@
+{
+  "name": "@tharak/rolemaster-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reusable, environment-independent Rolemaster rules and combat engine",
+  "exports": {
+    ".": "./src/index.js",
+    "./rules": "./src/rules.js",
+    "./app-data": "./src/app-data.js",
+    "./character-rules": "./src/character-rules.js",
+    "./coliseum-rules": "./src/coliseum-rules.js",
+    "./coliseum-contenders": "./src/coliseum-contenders.js",
+    "./guild-spells": "./src/guild-spells.js",
+    "./guild-battle": "./src/guild-battle.js",
+    "./critical-consequences": "./src/critical-consequences.js",
+    "./critical-death": "./src/critical-death.js",
+    "./critical-duration": "./src/critical-duration.js",
+    "./critical-equipment": "./src/critical-equipment.js",
+    "./critical-initiative": "./src/critical-initiative.js",
+    "./critical-recoil": "./src/critical-recoil.js",
+    "./critical-source": "./src/critical-source.js",
+    "./critical-stun": "./src/critical-stun.js",
+    "./healing-rules": "./src/healing-rules.js",
+    "./economics-rules": "./src/economics-rules.js",
+    "./experience-rules": "./src/experience-rules.js",
+    "./magic-item-rules": "./src/magic-item-rules.js",
+    "./miscellaneous-rules": "./src/miscellaneous-rules.js",
+    "./encounter-generation-rules": "./src/encounter-generation-rules.js",
+    "./combat-support": "./src/combat-support.js",
+    "./rust-components": "./src/rust-components.js",
+    "./random": "./src/random.js"
+  },
+  "files": [
+    "src",
+    "rust",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tharak/rolemasterCore.git"
+  }
+}
