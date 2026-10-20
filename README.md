@@ -58,3 +58,31 @@ cross-language attack lookup cases. The pack contains no PDFs. Existing JS APIs
 remain unchanged. This tactical API is experimental until the complete source
 rule audit and browser integration checks have finished; do not treat it as a
 complete Rolemaster rules implementation.
+
+### Simplified tactical turns
+
+`BattleState::new_simplified` opts into individual Normal turns. The existing
+`BattleState::new`, full-round `commit`/`step` API and JavaScript fieldbook rules
+retain their behavior. `BattleState.turns` contains the initiative order, active
+actor, position, remaining movement, main-action availability, parry reserves,
+and monotonic command sequence. Initiative is 2d10 plus existing status/profile
+modifiers, with ID ties and no declaration-dependent movement penalty.
+
+Submit `command_turn(actor, expected_sequence, TurnCommand, data)` and play its
+returned events. Then call `advance_turn_playback`; a movement command retains
+the actor, while a main action advances the turn. The host chooses enemy actions
+when that enemy becomes active. The core validates each command atomically;
+duplicates, stale sequences and out-of-turn actors do not consume resources or
+RNG. Serialize the complete battle, including the decimal-string RNG, to resume
+at either side of the playback boundary. A skipped turn is also a playback
+boundary, and expires that fighter's reserve. Round cleanup runs once after the
+last initiative entry, including the final round.
+
+Movement is at most half base movement before the main action. Attacks use their
+full normal resolution; casts use zero preparation. Reload advances 100 units,
+weapon recovery one round, and every utility/cast/parry/wait consumes the main
+action. `TurnCommand::Parry` requires a usable melee weapon and reserves its
+nonnegative full OB against all melee attackers until the defender's next turn.
+Lookup searches for the smallest expenditure removing both hits and criticals;
+insufficient reserves are spent completely. Misses and fumbles cost nothing;
+missiles and spells bypass the reserve. Parry expenditure never rolls extra dice.

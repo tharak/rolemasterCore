@@ -2,9 +2,11 @@
 //! Positions use axial five-foot hexes. All mutations go through commit/step.
 pub mod data;
 mod failures;
+mod turns;
 use data::{DataPack, Effect};
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, BTreeSet, VecDeque};
+pub use turns::{TurnCommand, TurnState};
 pub const SAVE_VERSION: u32 = 1;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
@@ -217,6 +219,8 @@ pub struct CombatEvent {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct BattleState {
     pub version: u32,
+    #[serde(default)]
+    pub turns: Option<TurnState>,
     pub round: u32,
     pub fighters: Vec<Fighter>,
     pub radius: i32,
@@ -243,6 +247,7 @@ impl BattleState {
     ) -> Result<Self, String> {
         let state = Self {
             version: SAVE_VERSION,
+            turns: None,
             round: 1,
             fighters,
             radius,
@@ -274,6 +279,7 @@ impl BattleState {
         {
             return Err("Invalid battle state".into());
         }
+        self.validate_turn_state()?;
         let mut ids = BTreeSet::new();
         let mut occupied = BTreeSet::new();
         for f in &self.fighters {
@@ -557,6 +563,9 @@ impl BattleState {
         Ok(())
     }
     pub fn commit(&mut self, plan: RoundPlan) -> Result<(), String> {
+        if self.turns.is_some() {
+            return Err("Use turn commands in simplified mode".into());
+        }
         self.validate_plan(&plan, None)?;
         self.initiative.clear();
         for i in 0..self.fighters.len() {
@@ -667,6 +676,9 @@ impl BattleState {
     /// Resolve exactly one declaration (or round cleanup), then return newly recorded events.
     /// Cloning at this boundary makes errors atomic: neither rolls nor partial effects escape.
     pub fn step(&mut self, data: &DataPack) -> Result<Vec<CombatEvent>, String> {
+        if self.turns.is_some() {
+            return self.advance_turn_playback();
+        }
         if !self.resolving || self.finished {
             return Ok(vec![]);
         }
@@ -840,7 +852,7 @@ impl BattleState {
                 let db = t.defense(self.round) + if missile { 0 } else { target_parry };
                 let dice = self.open_roll();
                 let first = dice[0];
-                let total = dice.iter().sum::<i32>() + w.ob - parry - db
+                let mut total = dice.iter().sum::<i32>() + w.ob - parry - db
                     + actor.modifier(self.round)
                     + a.phase.modifier()
                     - (if missile { 60 } else { 100 } - a.activity as i32)
@@ -859,6 +871,9 @@ impl BattleState {
                     let roll = self.die(100);
                     self.weapon_fumble(a, roll, data)?;
                 } else {
+                    if !missile && self.turns.is_some() {
+                        total = self.spend_turn_parry(*target, &w.table, total, first, data)?;
+                    }
                     self.apply_attack(a, *target, &w.table, &w.critical, total, first, dice, data)?;
                 }
             }
@@ -1416,7 +1431,11 @@ impl BattleState {
             None,
             None,
             "round",
-            format!("Round {} — declare actions", self.round),
+            if self.turns.is_some() {
+                format!("Round {}", self.round)
+            } else {
+                format!("Round {} — declare actions", self.round)
+            },
             vec![],
             0,
             None,
